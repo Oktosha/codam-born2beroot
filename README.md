@@ -59,3 +59,8 @@ https://help.ubuntu.com/community/UFW
 `ufw status verbose` shows ufw status
 
 `lsof` - list all open files; `lsof -i` - files for Internet
+
+Or, a better way from the subject - `ss -tunlp` (overlooked it at first).
+
+[Why isn't ping shown in `netstat`?](https://www.quora.com/Why-doesnt-the-netstat-command-display-any-information-about-ICMP-connections)
+
