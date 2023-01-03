@@ -2,17 +2,13 @@
 
 Some notes on born2beroot project at Codam
 
-## Extra info
-
-You don't need to know it to pass the project, but it is fun/useful
-
-### Increasing the screen size of virtual machine
+## Increasing the screen size of virtual machine
 
 basic (up to 1280x1024) https://www.ronaldtoussaint.nl/2018/01/24/increasing-the-screen-resolution-of-linux-console-with-grub-in-virtualbox/
 
 I tried to increase it further, but it didn't work. I added a custom resolution like this: https://docs.oracle.com/en/virtualization/virtualbox/6.0/admin/adv-display-config.html but than I had problem that my framebuffer was too small and I wasn't able to increase it even with fbset.
 
-### TTYs
+## TTYs
 
 By default you have 6 terminals open, and you can switch between them with
 `alt + F1`, `alt + F2`, ...` alt + F6`. With the default Mac host settings you'll need to press `fn` as well to make `F1`, `F2`, …, `F6` work. And if there is a graphics interface on your linux you'll also need `control`.
@@ -21,17 +17,25 @@ Another way to change between terminals is `chvt` command, i. e. `chvt 3` to cha
 
 An article on terminals: http://www.linusakesson.net/programming/tty/index.php 
 
-### Using less
+## Using less
 
 One can pipe long output into `less` to be able to navigate it. For example `lsblk -h | less`. Type `q` to exit, type `/pattern` to find the pattern, type `n` to go to the next occurence, type `N` for previous occurence. Also, see `man less`.
 
 But I reccoment ssh into your virtual machine from the host and use comfortable terminal with scroll and copy-paste.
 
-### Env variables
+## Env variables
 
 `export` - set
 `env` - print
 `unset` - unset
+
+## change default editor
+
+`update-alternatives --config editor` (updates the editor system-wide)
+
+## Changing users
+
+`su --login {username}` or `su - {username}` changes user. Without `--login`/`-` will not change env variables properly.
 
 ## LVM
 
@@ -64,3 +68,28 @@ Or, a better way from the subject - `ss -tunlp` (overlooked it at first).
 
 [Why isn't ping shown in `netstat`?](https://www.quora.com/Why-doesnt-the-netstat-command-display-any-information-about-ICMP-connections)
 
+## Hostname
+
+`hostnamectl set-hostname {new hostname}` + change `/etc/hosts`
+
+Check via `hostnamectl`
+
+## Groups
+
+`groups` shows groups of current user
+
+`groups {username}` shows groups of `{username}`
+
+`id [{username}]` shows groups with group ids, also shows which groups if primary for the user.
+
+`groupadd {groupname}` create group
+
+`usermod -a -G {groupname(s)} {username}` add user to a group. With `-g` makes the group primary for user. Without `-a` all non-listed groups will be erased (except for the primary?)
+
+`gpasswd -a {user} {group}` add user to group.
+
+`gpassed -d {user} {group}` delete user from group.
+
+## Sudo
+
+`visudo` - change sudo settings
