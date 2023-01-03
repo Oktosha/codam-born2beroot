@@ -90,6 +90,17 @@ Check via `hostnamectl`
 
 `gpassed -d {user} {group}` delete user from group.
 
+## Users
+
+`useradd` low level user creation
+
+`adduser` hight level user creation
+
+
+## Password policy
+
+First, install `libpam-pwquality`.
+
 ## Sudo
 
 `visudo` - change sudo settings
