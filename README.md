@@ -97,9 +97,19 @@ Check via `hostnamectl`
 `adduser` hight level user creation
 
 
-## Password policy
+## Password strength
 
 First, install `libpam-pwquality`.
+
+Config is stored in `/etc/security/pwquality.conf`
+
+The `pwquality` module is somehow automatically added to `/etc/pam.d/common-password`
+
+`pwscore` checks passwords. Install with `apt-get install libpwquality-tools`. Accepts username as an argument to check for similarities.
+
+# Password managment
+
+`passwd` change password
 
 ## Sudo
 
