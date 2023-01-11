@@ -111,6 +111,10 @@ The `pwquality` module is somehow automatically added to `/etc/pam.d/common-pass
 
 `passwd` change password
 
+`chage` set expiration data for exisiting users
+
+`/etc/login.defs` - expiration data defaults
+
 ## Sudo
 
 `visudo` - change sudo settings
