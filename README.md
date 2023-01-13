@@ -118,3 +118,11 @@ The `pwquality` module is somehow automatically added to `/etc/pam.d/common-pass
 ## Sudo
 
 `visudo` - change sudo settings
+
+`ssh localhost -p 2022 'sudo -S echo "Hello"'` way to check `requiretty`
+
+`Defaults        env_reset,timestamp_timeout=0` ask for password every time
+
+if `secure_path` is set, than `sudo` looks for executables there. My example executable lies in `/usr/local/games` which is in `PATH` but not in `secure_path` so sudo doesn't see it. If I want to run such an executable, I need `sudo $(which MY_EXECUTABLE) ARGUMENTS`.
+
+You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then replay a session with `sudoreplay -d /var/log/sudo TSID`.
