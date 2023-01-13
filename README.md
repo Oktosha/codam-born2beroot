@@ -107,7 +107,7 @@ The `pwquality` module is somehow automatically added to `/etc/pam.d/common-pass
 
 `pwscore` checks passwords. Install with `apt-get install libpwquality-tools`. Accepts username as an argument to check for similarities.
 
-# Password managment
+## Password managment
 
 `passwd` change password
 
@@ -126,3 +126,7 @@ The `pwquality` module is somehow automatically added to `/etc/pam.d/common-pass
 if `secure_path` is set, than `sudo` looks for executables there. My example executable lies in `/usr/local/games` which is in `PATH` but not in `secure_path` so sudo doesn't see it. If I want to run such an executable, I need `sudo $(which MY_EXECUTABLE) ARGUMENTS`.
 
 You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then replay a session with `sudoreplay -d /var/log/sudo TSID`.
+
+## MISC
+
+Fancy ascii banners https://manytools.org/hacker-tools/ascii-banner/
