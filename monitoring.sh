@@ -22,3 +22,10 @@ used_RAM_MB="$(free -m | sed -n 2p | awk '{print $3}')";
 percentage_used_RAM="$(awk -v used=$used_RAM_MB -v total=$total_RAM_MB 'BEGIN {printf "%.2f", used / total * 100}')";
 # echo $persentage_used_RAM
 echo "#Memory Usage: $used_RAM_MB/$total_RAM_MB ($percentage_used_RAM%)";
+
+# Memory
+total_memory="$(df --total --human | tail -n 1 | awk '{print $2}')"
+used_memory="$(df --total --human | tail -n 1 | awk '{print $3}')"
+percentage_used_memory="$(df --total --human | tail -n 1 | awk '{print $5}')"
+echo "#Disk Usage: $used_memory/$total_memory ($percentage_used_memory)"
+

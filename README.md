@@ -132,3 +132,5 @@ You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then 
 Fancy ascii banners https://manytools.org/hacker-tools/ascii-banner/
 
 Save if forgot to call vim with sudo: `:w !sudo tee %` [link](https://www.cyberciti.biz/faq/vim-vi-text-editor-save-file-without-root-permission/)
+
+Hold `alt` to select in iTerm for copying to clipboard of the host machine.
