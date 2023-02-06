@@ -29,3 +29,7 @@ used_memory="$(df --total --human | tail -n 1 | awk '{print $3}')"
 percentage_used_memory="$(df --total --human | tail -n 1 | awk '{print $5}')"
 echo "#Disk Usage: $used_memory/$total_memory ($percentage_used_memory)"
 
+# CPU load
+idle_CPU="$(mpstat 2 1 | tail -n 1 | awk '{print $NF}')"
+used_CPU="$(awk -v idle=$idle_CPU 'BEGIN {printf "%.1f", 100 - idle}')"
+echo "#CPU load: $used_CPU%"

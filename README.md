@@ -127,6 +127,13 @@ if `secure_path` is set, than `sudo` looks for executables there. My example exe
 
 You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then replay a session with `sudoreplay -d /var/log/sudo TSID`.
 
+
+# CPU load
+
+`sudo apt-get install sysstat` — better CPU monitoring than top.
+
+`mpstat 2 1` gives 1 data point about 2-second interval.
+
 ## MISC
 
 Fancy ascii banners https://manytools.org/hacker-tools/ascii-banner/
