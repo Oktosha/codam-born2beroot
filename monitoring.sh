@@ -33,3 +33,7 @@ echo "#Disk Usage: $used_memory/$total_memory ($percentage_used_memory)"
 idle_CPU="$(mpstat 2 1 | tail -n 1 | awk '{print $NF}')"
 used_CPU="$(awk -v idle=$idle_CPU 'BEGIN {printf "%.1f", 100 - idle}')"
 echo "#CPU load: $used_CPU%"
+
+# Last boot
+boot_time="$(who -b | awk 'print $3 $4')"
+echo "#Last boot: $boot_time"

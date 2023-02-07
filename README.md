@@ -141,3 +141,5 @@ Fancy ascii banners https://manytools.org/hacker-tools/ascii-banner/
 Save if forgot to call vim with sudo: `:w !sudo tee %` [link](https://www.cyberciti.biz/faq/vim-vi-text-editor-save-file-without-root-permission/)
 
 Hold `alt` to select in iTerm for copying to clipboard of the host machine.
+
+To enter a folder with a name starting with `-` use `--`, i. e. `cd -- -2`
