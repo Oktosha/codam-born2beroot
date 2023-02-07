@@ -18,7 +18,7 @@ used_RAM_MB="$(free -m | sed -n 2p | awk '{print $3}')";
 # echo $used_RAM_MB
 percentage_used_RAM="$(awk -v used=$used_RAM_MB -v total=$total_RAM_MB 'BEGIN {printf "%.2f", used / total * 100}')";
 # echo $persentage_used_RAM
-echo "#Memory Usage: $used_RAM_MB/$total_RAM_MB ($percentage_used_RAM%)";
+echo "#Memory Usage: $used_RAM_MB/${total_RAM_MB}MB ($percentage_used_RAM%)";
 
 # Memory
 total_memory="$(df --total --human | tail -n 1 | awk '{print $2}')"
@@ -43,3 +43,7 @@ then
 else
 	echo "#LVM use: no"
 fi
+
+# Active TCP connections
+number_tcp_connections="$(netstat --tcp | grep ESTABLISHED | wc -l)"
+echo "#Connections TCP : $number_tcp_connections ESTABLISHED"
