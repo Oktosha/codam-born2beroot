@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Output fancy banner
-cat /sbin/cronjobs/banner.txt;
-
 # Architecture
 echo "#Architecture: $(uname -a)";
 # I would prefer to split architecture/kernel version like this
@@ -35,5 +32,5 @@ used_CPU="$(awk -v idle=$idle_CPU 'BEGIN {printf "%.1f", 100 - idle}')"
 echo "#CPU load: $used_CPU%"
 
 # Last boot
-boot_time="$(who -b | awk 'print $3 $4')"
+boot_time="$(who -b | awk '{print $3 " " $4}')"
 echo "#Last boot: $boot_time"
