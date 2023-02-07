@@ -27,10 +27,19 @@ percentage_used_memory="$(df --total --human | tail -n 1 | awk '{print $5}')"
 echo "#Disk Usage: $used_memory/$total_memory ($percentage_used_memory)"
 
 # CPU load
-idle_CPU="$(mpstat 2 1 | tail -n 1 | awk '{print $NF}')"
-used_CPU="$(awk -v idle=$idle_CPU 'BEGIN {printf "%.1f", 100 - idle}')"
-echo "#CPU load: $used_CPU%"
+# idle_CPU="$(mpstat 2 1 | tail -n 1 | awk '{print $NF}')"
+# used_CPU="$(awk -v idle=$idle_CPU 'BEGIN {printf "%.1f", 100 - idle}')"
+# echo "#CPU load: $used_CPU%"
 
 # Last boot
 boot_time="$(who -b | awk '{print $3 " " $4}')"
 echo "#Last boot: $boot_time"
+
+# LVM use
+lsblk --list -o TYPE -n | grep lvm -q
+if [ $? -eq 0 ]
+then
+	echo "#LVM use: yes"
+else
+	echo "#LVM use: no"
+fi
