@@ -47,3 +47,7 @@ fi
 # Active TCP connections
 number_tcp_connections="$(netstat --tcp | grep ESTABLISHED | wc -l)"
 echo "#Connections TCP : $number_tcp_connections ESTABLISHED"
+
+# Logged in users
+number_of_users="$(w -h | awk '{print $1}' | sort | uniq | wc -l)"
+echo "#User log: $number_of_users"
