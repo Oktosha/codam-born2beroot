@@ -134,6 +134,10 @@ You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then 
 
 `mpstat 2 1` gives 1 data point about 2-second interval.
 
+# Networking
+
+`ifconfig` is depricated, use `ip` and `ss` instead.
+
 ## MISC
 
 Fancy ascii banners https://manytools.org/hacker-tools/ascii-banner/

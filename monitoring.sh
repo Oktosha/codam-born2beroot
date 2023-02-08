@@ -51,3 +51,8 @@ echo "#Connections TCP : $number_tcp_connections ESTABLISHED"
 # Logged in users
 number_of_users="$(w -h | awk '{print $1}' | sort | uniq | wc -l)"
 echo "#User log: $number_of_users"
+
+# Network
+ip="$(hostname -I)"
+mac="$(ip -br link show | grep -v LOOPBACK | awk '{print $3}')"
+echo "Network: IP $ip($mac)"
