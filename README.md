@@ -138,6 +138,10 @@ You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then 
 
 `ifconfig` is depricated, use `ip` and `ss` instead.
 
+# Cron
+
+`crontab -e` edits cron for current user. https://crontab.guru/ - site that explains chron syntax.
+
 ## MISC
 
 Fancy ascii banners https://manytools.org/hacker-tools/ascii-banner/
