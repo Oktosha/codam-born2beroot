@@ -39,9 +39,9 @@ boot_message="#Last boot: $boot_time"
 lsblk --list -o TYPE -n | grep lvm -q
 if [ $? -eq 0 ]
 then
-	lvm_message="#LVM use: yes\n"
+	lvm_message="#LVM use: yes"
 else
-	lvm_message="#LVM use: no\n"
+	lvm_message="#LVM use: no"
 fi
 
 # Active TCP connections
