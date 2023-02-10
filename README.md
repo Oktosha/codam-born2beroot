@@ -1,6 +1,8 @@
 # codam-born2beroot
 
-Some notes on born2beroot project at Codam
+Some notes on born2beroot project at Codam.
+This file contains general notes in no particular order.
+See also `checklist.md` which roughly follows subject structure.
 
 ## Increasing the screen size of virtual machine
 
@@ -51,6 +53,8 @@ Also, here is the [source code for lsblk](https://github.com/util-linux/util-lin
 ## SSH
 
 `sshd -T` see settings
+
+`systemctl status sshd` see status
 
 `/etc/ssh/sshd_config` - set settings
 
