@@ -70,9 +70,24 @@ Here I go throgh all the questions in the subject and mark them answered.
 
 ## Strong password policy
 
+* ❌ All passwords are changed after finishing sudo setup
+* ❌ Passwords expire every 30 days (existing & new)
+* ❌ Users receive a warning 7 days before expiration (existing & new)
+* ❌ User can change password not earlier than after 2 days (existing & new)
+* ❌ Password must be at least 10 characters long
+* ❌ Password myst contain uppercase letter, lowercase letter and number
+* ❌ Password can't have more than 3 consecutive identical characters
+* ❌ The password must not include the name of the user
+* ❌ The password must have at least 7 characters that are not part of the former password (except for the root)
+* ❌ Every user complies with the policy, including root
+
 ## Sudo policy
 
-* All passwords are changed after finishing sudo setup
+* ❌ Authentication using sudo is limited to 3 attempts
+* ❌ Error due to a wrong password with sudo is a custom message
+* ❌ Each sudo action should be archived to /var/log/sudo (both inputs and outputs)
+* ❌ TTY mode is enabled
+* ❌ paths that can be used by sudo are restricted
 
 ## Changes during evaluation
 
