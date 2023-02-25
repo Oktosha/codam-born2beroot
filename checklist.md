@@ -5,24 +5,39 @@ Here I go throgh all the questions in the subject and mark them answered.
 ## Things I have to know
 
 * <details>
-  <summary> ❌ What is a virtual machine?</summary>
+  <summary> 🤷 What is a virtual machine?</summary>
 
   Something-something, everything emulated. Heavier than a docker container.
   </details>
 * <details>
-  <summary> ❌ What is the difference between Debian and Rocky?</summary>
+  <summary> 🤷 How does virtual machine work?</summary>
 
-  Meh, they are both Linux. Rocky seems to be more difficult.
+  Host emulates a machine and tricks guest system to think it's installed on real computer.
   </details>
 * <details>
-  <summary> ❌ What are SELinux and AppArmor?</summary>
+  <summary> 🤷 What the purpose of a virtual machine?</summary>
 
-  Something-something security.
+  Something-something, security, reproducability, running stuff not possible on host system.
   </details>
 * <details>
-  <summary> ❌ What is the difference between apt and aptitude?</summary>
+  <summary> 🤷 What is the difference between Debian and Rocky?</summary>
 
-  Different interfaces for package management. `apt-get` is lower level than `apt`.
+  Meh, they are both Linux. Rocky seems to be more difficult. Package managers are different and packages are different.
+  </details>
+* <details>
+  <summary> 🤷 What are SELinux and AppArmor?</summary>
+
+  Something-something security. Mandatory Access Control. AppArmor is easier but lacks Multi-Level Security. [Something on AppArmor vs SELinux](https://www.redhat.com/sysadmin/apparmor-selinux-isolation)
+  </details>
+* <details>
+  <summary> 🤷 What is the difference between apt and aptitude?</summary>
+
+  Different interfaces for package management. Aptitude is interface for both apt-get and dselect (dselect allows to flexibily choose ways to satisfy dependencies). `apt-get` is lower level than `apt`.
+  </details>
+* <details>
+  <summary> 🤷 What is LVM?</summary>
+
+  Logical volume manager something-something.
   </details>
 
 ## Checks
@@ -70,24 +85,36 @@ Here I go throgh all the questions in the subject and mark them answered.
 
 ## Strong password policy
 
-* ❌ All passwords are changed after finishing sudo setup
-* ❌ Passwords expire every 30 days (existing & new)
-* ❌ Users receive a warning 7 days before expiration (existing & new)
-* ❌ User can change password not earlier than after 2 days (existing & new)
-* ❌ Password must be at least 10 characters long
-* ❌ Password myst contain uppercase letter, lowercase letter and number
-* ❌ Password can't have more than 3 consecutive identical characters
-* ❌ The password must not include the name of the user
-* ❌ The password must have at least 7 characters that are not part of the former password (except for the root)
-* ❌ Every user complies with the policy, including root
+* <details> 
+  <summary> ✅ All passwords are changed after finishing sudo setup</summary>
+  
+  `getent passwd {1000..60000}` to get usernames
+
+  `su - [username]` to log into a user
+  </details>
+* <details>
+  <summary> ✅ Passwords expire every 30 days (existing & new) </summary>
+  
+  `chage -l [username]` to get info for existing user
+
+  Defaults for new users are stored in `/etc/login.defs`
+  </details>
+* ✅ Users receive a warning 7 days before expiration (existing & new)
+* ✅ User can change password not earlier than after 2 days (existing & new)
+* ✅ Password must be at least 10 characters long
+* ✅ Password myst contain uppercase letter, lowercase letter and number
+* ✅ Password can't have more than 3 consecutive identical characters
+* ✅ The password must not include the name of the user
+* ✅ The password must have at least 7 characters that are not part of the former password (except for the root)
+* ✅ Every user complies with the policy, including root
 
 ## Sudo policy
 
-* ❌ Authentication using sudo is limited to 3 attempts
-* ❌ Error due to a wrong password with sudo is a custom message
+* ✅ Authentication using sudo is limited to 3 attempts
+* ✅ Error due to a wrong password with sudo is a custom message
 * ❌ Each sudo action should be archived to /var/log/sudo (both inputs and outputs)
 * ❌ TTY mode is enabled
-* ❌ paths that can be used by sudo are restricted
+* ✅ paths that can be used by sudo are restricted
 
 ## Changes during evaluation
 

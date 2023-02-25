@@ -131,6 +131,8 @@ if `secure_path` is set, than `sudo` looks for executables there. My example exe
 
 You can look at the sudo session with `sudoreplay -d /var/log/sudo -l` and then replay a session with `sudoreplay -d /var/log/sudo TSID`.
 
+`sudo -k` revoke credentials.
+
 
 # CPU load
 
