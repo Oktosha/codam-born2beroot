@@ -92,7 +92,7 @@ Check via `hostnamectl`
 
 `gpasswd -a {user} {group}` add user to group.
 
-`gpassed -d {user} {group}` delete user from group.
+`gpasswd -d {user} {group}` delete user from group.
 
 ## Users
 

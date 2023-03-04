@@ -112,31 +112,32 @@ Here I go throgh all the questions in the subject and mark them answered.
 
 * ✅ Authentication using sudo is limited to 3 attempts
 * ✅ Error due to a wrong password with sudo is a custom message
-* ❌ Each sudo action should be archived to /var/log/sudo (both inputs and outputs)
-* ❌ TTY mode is enabled
+* ✅ Each sudo action should be archived to /var/log/sudo (both inputs and outputs)
+* ✅ TTY mode is enabled
 * ✅ paths that can be used by sudo are restricted
 
 ## Changes during evaluation
 
 * <details>
-  <summary> ❌ Test ssh through setting up a new account </summary>
+  <summary>  ✅ Change UFW rules </summary>
 
-  `adduser` something-something. Check that password policy is respected.
+  `ufw statis numbered` -> `ufw delete` -> `ufw add`
   </details>
 * <details>
-  <summary> ❌ Change UFW rules </summary>
+  <summary> ✅ Change hostname </summary>
 
-  `ufw` ??
+  `hostnamectl set-hostname {new hostname}` + change `/etc/hosts`
   </details>
 * <details>
-  <summary> ❌ Change hostname </summary>
+  <summary> ✅ Create a new user and assign it to a group </summary>
 
-  `hostnamectl --set-hostname` ??
-  </details>
-* <details>
-  <summary> ❌ Create a new user and assign it to a group </summary>
+  `adduser` something-something for creation
 
-  `adduser` something-something. Check that password policy is respected.
+  `groupadd {groupname}` create group
+
+  `gpasswd -a {user} {group}` add user to group.
+
+  `gpasswd -d {user} {group}` delete user from group.
   </details>
 
 ## Script
